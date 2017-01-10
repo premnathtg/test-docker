@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 language: none
 
 build:
@@ -10,4 +11,17 @@ build:
 
 branches:
   only:
+=======
+language: none
+
+build:
+  ci:
+    - echo 'CI Running'
+    - export IMAGE_NAME=premnathtg/test-run1
+  post_ci:
+    - ./build.sh
+
+branches:
+  only:
+>>>>>>> origin/master
     - master
