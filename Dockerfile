@@ -8,7 +8,7 @@ RUN yum -y install httpd
 COPY *.rpm /root/
 COPY httpd.conf /etc/httpd/conf/
 RUN echo "Listen 80" > /etc/httpd/conf/ports.conf
-COPY devwww.cram.com.conf /etc/httpd/conf.d/
+COPY devwww.com.conf /etc/httpd/conf.d/
 RUN cp /etc/mime.types /etc/httpd/conf/
 RUN rpm -ivh /root/ZendFramework-1.11.12-1.x86_64.rpm
 RUN rpm -ivh /root/GeoIP-initial-0.1-1.x86_64.rpm
