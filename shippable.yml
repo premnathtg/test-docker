@@ -14,4 +14,4 @@ branches:
 integrations:
   hub:
     - integrationName: test-run1
-      type: test-run1
+      type: image
