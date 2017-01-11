@@ -19,15 +19,6 @@ RUN echo 127.0.0.1 devwww.cram.com > /etc/hosts
 COPY mongo.so /usr/lib64/php/modules/ 
 COPY mongo.ini /etc/php.d/
 COPY php.ini /etc/
-####This section is for haproxy for SSL offloading (temporary)###
-RUN yum -y install haproxy
-RUN mkdir /etc/cert
-COPY haproxy.cfg /etc/haproxy/
-COPY null.host.pem /etc/cert
-COPY docker-entrypoint /
-CMD ["/docker-entrypoint"]
-CMD ["haproxy", "-f", "/etc/haproxy/haproxy.cfg"]
-#######End of HAPROXY#############################################
 #COPY httpd-start /usr/local/bin
 RUN echo "#!/bin/bash" > /usr/local/bin/httpd-start
 RUN echo "set -e" >> /usr/local/bin/httpd-start 
