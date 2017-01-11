@@ -9,3 +9,8 @@ build:
 branches:
   only:
     - master
+    
+integrations:
+  hub:
+    - integrationName: test-run1
+      type: test-run1
