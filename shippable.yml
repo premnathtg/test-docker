@@ -3,6 +3,7 @@ language: none
 build:
   ci:
     - echo 'CI Running'
+    -  docker build -t premnathtg/test-docker:1 .
    
  
 branches:
