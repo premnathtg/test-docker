@@ -15,7 +15,7 @@ RUN rpm -ivh /root/GeoIP-initial-0.1-1.x86_64.rpm
 RUN rpm -ivh  /root/php55w-pecl-gearman-1.1.2-1.w7.src.rpm
 RUN rpm -ivh /root/php55w-pecl-gearman-1.1.2-1.w7.x86_64.rpm
 RUN echo 127.0.0.1 devwww.cram.com > /etc/hosts
-COPY GeoIP.conf.erb /etc/GeoIP/GeoIP.conf 
+#COPY GeoIP.conf.erb /etc/GeoIP/GeoIP.conf 
 COPY mongo.so /usr/lib64/php/modules/ 
 COPY mongo.ini /etc/php.d/
 COPY php.ini /etc/
