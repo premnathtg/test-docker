@@ -10,6 +10,7 @@ build:
   post_ci:
     - chmod 777 push.sh
     - ./push.sh
+
 branches:
   only:
     - master
