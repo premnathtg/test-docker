@@ -3,9 +3,22 @@ language: none
 build:
   ci:
     - echo 'CI Running'
-    -  docker build -t premnathtg/test-docker:1 .
-   
- 
+    - docker build -t premnathtg/test-docker:1 .
+    - export IMAGE_NAME=680976004409.dkr.ecr.us-east-1.amazonaws.com/devimages
+    - chmod 777 build.sh
+    - ./build.sh
+  post_ci:
+    - chmod 777 push.sh
+    - ./push.sh
+services:
+    - gearmand
+    - redis
+    
 branches:
   only:
     - master
+    
+integrations:
+    hub:
+      - integrationName: Amazon-DEV
+        type: ecr
